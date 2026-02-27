@@ -70,7 +70,7 @@ const Index = () => {
                   Fund a Repair
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
+              <Button size="lg" variant="outline" className="border-white bg-white text-primary hover:bg-white/90" asChild>
                 <Link to="/create">
                   I Need Help
                   <ArrowRight className="ml-2 h-5 w-5" />
