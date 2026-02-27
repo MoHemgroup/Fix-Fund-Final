@@ -8,7 +8,7 @@ import heroImage from "@/assets/hero-image.jpg";
 
 const stats = [
   { label: "Repairs Funded", value: "$127,000+", icon: DollarSign },
-  { label: "Families Helped", value: "89", icon: Users },
+  { label: "Families Helped", value: "100+", icon: Users },
   { label: "Contractors Vetted", value: "34", icon: Wrench },
 ];
 
