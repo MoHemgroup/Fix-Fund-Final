@@ -10,7 +10,7 @@ const Footer = () => (
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
               <Home className="h-4 w-4 text-primary-foreground" />
             </div>
-            <span className="font-display text-lg font-bold">FixFund</span>
+            <span className="font-display text-lg font-bold">FixStarter</span>
           </Link>
           <p className="text-sm text-muted-foreground">
             Connecting renters in need with donors who care. Every dollar goes directly to verified repairs.
@@ -40,7 +40,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="mt-8 border-t pt-6 text-center text-xs text-muted-foreground">
-        © 2026 FixFund. All rights reserved. No tenant pays a dime.
+        © 2026 FixStarter. All rights reserved. No tenant pays a dime.
       </div>
     </div>
   </footer>

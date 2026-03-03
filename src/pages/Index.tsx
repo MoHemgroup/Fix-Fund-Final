@@ -60,7 +60,7 @@ const Index = () => {
               Safe homes shouldn't be a luxury
             </h1>
             <p className="mb-8 text-lg text-primary-foreground/80 md:text-xl">
-              FixFund connects renters with verified repair needs to donors who fund the fix. 
+              FixStarter connects renters with verified repair needs to donors who fund the fix.
               Every dollar goes directly to a vetted contractor. Tenants pay $0.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -100,7 +100,7 @@ const Index = () => {
       <section className="bg-background py-16 md:py-24">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="mb-3 font-display text-3xl text-foreground md:text-4xl">How FixFund Works</h2>
+            <h2 className="mb-3 font-display text-3xl text-foreground md:text-4xl">How FixStarter Works</h2>
             <p className="mx-auto max-w-xl text-muted-foreground">
               No cash to tenants. No burden on landlords. Just verified repairs funded by people who care.
             </p>
