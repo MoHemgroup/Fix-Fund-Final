@@ -119,6 +119,9 @@ const CreateRequest = () => {
                   value={form.title}
                   onChange={(e) => setForm({ ...form, title: e.target.value })}
                 />
+                {form.title.length > 0 && form.title.length <= 5 && (
+                  <p className="mt-1 text-xs text-destructive">Title must be at least 6 characters.</p>
+                )}
               </div>
               <div>
                 <Label htmlFor="story">Your Story</Label>
@@ -129,6 +132,12 @@ const CreateRequest = () => {
                   value={form.story}
                   onChange={(e) => setForm({ ...form, story: e.target.value })}
                 />
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {form.story.length}/20 minimum characters
+                  {form.story.length > 0 && form.story.length <= 20 && (
+                    <span className="text-destructive"> — keep going!</span>
+                  )}
+                </p>
               </div>
               <div>
                 <Label>Urgency Level</Label>
