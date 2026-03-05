@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,8 +21,11 @@ const CreateRequest = () => {
     story: "",
     urgency: "medium" as "low" | "medium" | "high",
     city: "",
+    address: "",
     consent: false,
   });
+  const [uploadedFile, setUploadedFile] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const totalSteps = 4;
 
@@ -144,10 +147,20 @@ const CreateRequest = () => {
               </div>
               <div>
                 <Label>Photos / Video (optional)</Label>
-                <div className="mt-2 flex h-24 cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-border bg-muted/50 text-muted-foreground hover:border-primary/40">
+                <input
+                  type="file"
+                  accept="image/*,video/*"
+                  ref={fileInputRef}
+                  className="hidden"
+                  onChange={(e) => setUploadedFile(e.target.files?.[0]?.name || null)}
+                />
+                <div
+                  className="mt-2 flex h-24 cursor-pointer items-center justify-center rounded-lg border-2 border-dashed border-border bg-muted/50 text-muted-foreground hover:border-primary/40"
+                  onClick={() => fileInputRef.current?.click()}
+                >
                   <div className="text-center text-sm">
                     <Upload className="mx-auto mb-1 h-5 w-5" />
-                    Click to upload
+                    {uploadedFile ? uploadedFile : "Click to upload"}
                   </div>
                 </div>
               </div>
@@ -172,7 +185,12 @@ const CreateRequest = () => {
               </div>
               <div>
                 <Label htmlFor="address">Full Address (private — for verification only)</Label>
-                <Input id="address" placeholder="123 Main St, Apt 4B" />
+                <Input
+                  id="address"
+                  placeholder="123 Main St, Apt 4B"
+                  value={form.address}
+                  onChange={(e) => setForm({ ...form, address: e.target.value })}
+                />
               </div>
               <div className="rounded-lg bg-secondary p-4 text-sm text-muted-foreground">
                 <p className="flex items-start gap-2">

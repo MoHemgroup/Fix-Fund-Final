@@ -31,7 +31,6 @@ const CampaignDetail = () => {
     );
   }
 
-  const percent = Math.round((campaign.funded / campaign.goal) * 100);
   const remaining = campaign.goal - campaign.funded;
 
   const handleDonate = () => {
